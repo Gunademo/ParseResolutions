@@ -22,8 +22,8 @@ function addonclick() {
         for(var i=0; i<a.length; i++){
             var PName = "p"+(i+1);
             var LName = "L"+(i+1);
-            document.getElementById(PName).innerHTML = "&nbsp&nbsp&nbsp&nbsp"+a[i];
-            document.getElementById(LName).innerHTML = a[i];
+            document.getElementById(PName).innerHTML = "&nbsp&nbsp&nbsp&nbsp"+a[i].trim();;
+            document.getElementById(LName).innerHTML = "&nbsp"+a[i].trim();
         }
 
 
