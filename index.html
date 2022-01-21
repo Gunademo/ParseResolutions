@@ -22,7 +22,7 @@ function addonclick() {
         for(var i=0; i<a.length; i++){
             var PName = "p"+(i+1);
             var LName = "L"+(i+1);
-            document.getElementById(PName).innerHTML = "&nbsp&nbsp&nbsp&nbsp"+a[i].trim();;
+            document.getElementById(PName).innerHTML = "&nbsp&nbsp&nbsp&nbsp"+a[i].trim();
             document.getElementById(LName).innerHTML = "&nbsp"+a[i].trim();
         }
 
@@ -92,7 +92,10 @@ function addonclick() {
 
         </td>
 
-        <td  style="background-color: lightblue;">
+        <td  style="background-color: lightblue;vertical-align: top;">
+			<label>Add this to Script</label> <br><br>
+			<label>&nbsp&nbsp&nbsp"preinstall": "npx force-resolutions",</label> <br><br><br><br><br><br><br><br>
+			<label>"resolutions": {</label>
 			<!--Paragraphs-->
 			<label id="p1" style="display:none"></label>
 			<label id="p2" style="display:none"></label>
@@ -135,7 +138,7 @@ function addonclick() {
 			<label id="p39" style="display:none"></label>
 			<label id="p40" style="display:none"></label>
 
-
+			<label id="p1">}, </label>
 
 
             
@@ -181,10 +184,10 @@ table {
   font-size: 14px;
   font-family: sans-serif;  
 }
-	
+
 h1{
 	text-align: center;
-    	font-family: monospace;
+    font-family: monospace;
 	
 }
 
