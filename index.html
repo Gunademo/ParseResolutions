@@ -26,6 +26,9 @@ function addonclick() {
         var a =  str.split("\n").sort();
 
         for(var i=0; i<a.length; i++){
+			if(a[i]===""){
+				continue;
+			}
             var PName = "p"+(i+1);
             var LName = "L"+(i+1);
             document.getElementById(PName).innerHTML = "&nbsp&nbsp&nbsp&nbsp"+a[i].trim();
@@ -43,7 +46,7 @@ function addonclick() {
 <table class="c">
     <tr>
         <td style="background-color: aliceblue;">
-            <textarea id="area" rows="70" cols="40"></textarea>
+            <textarea id="area" rows="61" cols="40"></textarea>
         </td>
 		<td  style="background-color: lightcyan;">
             <button id="button1" onclick="addonclick()" style="margin-left: 100px;">Process</button>
@@ -110,7 +113,10 @@ function addonclick() {
 
         <td  style="background-color: lightblue;vertical-align: top;">
 			<label>Add this to Script</label> <br><br>
-			<label>&nbsp&nbsp&nbsp"preinstall": "npx force-resolutions",</label> <br><br><br><br><br><br><br><br>
+			<textarea id="textarea1">"preinstall": "npx force-resolutions",</textarea>
+			<br><br><br><br><br><br><br><br>
+			
+			<div id="diva">
 			<label>"resolutions": {</label>
 			<!--Paragraphs-->
 			<label id="p1" style="display:none"></label>
@@ -164,7 +170,9 @@ function addonclick() {
 			<label id="p49" style="display:none"></label>
 			<label id="p50" style="display:none"></label>
 
-			<label id="p1">}, </label>
+			<label>}, </label>
+			
+			</div>
 
 
             
@@ -174,6 +182,13 @@ function addonclick() {
 
 
 <style>
+
+#diva {
+  border: 2px solid blue;
+  padding: 10px;
+  margin: 2px;
+  background-color: white;
+}
 #button1 {
   background-color: #4CAF50; /* Green */
   border: none;
