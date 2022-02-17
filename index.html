@@ -13,13 +13,18 @@
 <script>
 function myFunction(a) {
   var checkBox = document.getElementById("c"+a);
-  var text = document.getElementById("p"+a);
+  var text1 = document.getElementById("p"+a);
+  var text2 = document.getElementById("s"+a);
   if (checkBox.checked == true){
-    text.style.display = "block";
+    text1.style.display = "block";
+	text2.style.display = "block";
   } else {
-     text.style.display = "none";
+     text1.style.display = "none";
+	 text2.style.display = "block";
   }
 }
+
+
 
 function addonclick() {
         var str= document.getElementById("area").value;
@@ -31,13 +36,30 @@ function addonclick() {
 			}
             var PName = "p"+(i+1);
             var LName = "L"+(i+1);
+			var SName = "s"+(i+1);
             document.getElementById(PName).innerHTML = "&nbsp&nbsp&nbsp&nbsp"+a[i].trim();
             document.getElementById(LName).innerHTML = "&nbsp"+a[i].trim();
+			document.getElementById(SName).innerHTML = getSed(a[i].trim());
         }
 
 
         
     }
+	
+	//  sed 's/\"url-parse\"\: \".*\"/\"url-parse\"\: \"1.5.6\"/g' abc
+	//  sed 's/\"url-parse\"\: \".*\"/\"url-parse\"\: \"1.5.6\"/g' package-lock.json
+	//   "url-parse": "1.5.6",
+	// text.substring(1, text.length-1);
+	
+function getSed(inp){
+	var a = inp.split(":");
+	var first = a[0].substring(1, a[0].length-1);
+	var second = a[1].substring(2, a[1].length-2);
+	var command = 'sed -i \'s/\\"'+first+'\\"\\: \\".*\\"/\\"'+first+'\\"'+'\\\: \\"'+second+'\\"/g\' package-lock.json';
+	//alert('sed \'s/\\"'+first+'\\"\\: \\".*\\"/\\"'+first+'\\"'+'\\\: \\"'+second+'\\"/g\' package-lock.json');
+	return command;
+
+}
 
 </script>
 
@@ -105,6 +127,26 @@ function addonclick() {
 			<input type="checkbox" id="c48" onclick="myFunction('48')">&nbsp&nbsp<label id="L48" for="c1"></label><br>
 			<input type="checkbox" id="c49" onclick="myFunction('49')">&nbsp&nbsp<label id="L49" for="c1"></label><br>
 			<input type="checkbox" id="c50" onclick="myFunction('50')">&nbsp&nbsp<label id="L50" for="c1"></label><br>
+			<input type="checkbox" id="c51" onclick="myFunction('51')">&nbsp&nbsp<label id="L51" for="c1"></label><br>
+			<input type="checkbox" id="c52" onclick="myFunction('52')">&nbsp&nbsp<label id="L52" for="c1"></label><br>
+			<input type="checkbox" id="c53" onclick="myFunction('53')">&nbsp&nbsp<label id="L53" for="c1"></label><br>
+			<input type="checkbox" id="c54" onclick="myFunction('54')">&nbsp&nbsp<label id="L54" for="c1"></label><br>
+			<input type="checkbox" id="c55" onclick="myFunction('55')">&nbsp&nbsp<label id="L55" for="c1"></label><br>
+			<input type="checkbox" id="c56" onclick="myFunction('56')">&nbsp&nbsp<label id="L56" for="c1"></label><br>
+			<input type="checkbox" id="c57" onclick="myFunction('57')">&nbsp&nbsp<label id="L57" for="c1"></label><br>
+			<input type="checkbox" id="c58" onclick="myFunction('58')">&nbsp&nbsp<label id="L58" for="c1"></label><br>
+			<input type="checkbox" id="c59" onclick="myFunction('59')">&nbsp&nbsp<label id="L59" for="c1"></label><br>
+			<input type="checkbox" id="c60" onclick="myFunction('60')">&nbsp&nbsp<label id="L60" for="c1"></label><br>
+			<input type="checkbox" id="c61" onclick="myFunction('61')">&nbsp&nbsp<label id="L61" for="c1"></label><br>
+			<input type="checkbox" id="c62" onclick="myFunction('62')">&nbsp&nbsp<label id="L62" for="c1"></label><br>
+			<input type="checkbox" id="c63" onclick="myFunction('63')">&nbsp&nbsp<label id="L63" for="c1"></label><br>
+			<input type="checkbox" id="c64" onclick="myFunction('64')">&nbsp&nbsp<label id="L64" for="c1"></label><br>
+			<input type="checkbox" id="c65" onclick="myFunction('65')">&nbsp&nbsp<label id="L65" for="c1"></label><br>
+			<input type="checkbox" id="c66" onclick="myFunction('66')">&nbsp&nbsp<label id="L66" for="c1"></label><br>
+			<input type="checkbox" id="c67" onclick="myFunction('67')">&nbsp&nbsp<label id="L67" for="c1"></label><br>
+			<input type="checkbox" id="c68" onclick="myFunction('68')">&nbsp&nbsp<label id="L68" for="c1"></label><br>
+			<input type="checkbox" id="c69" onclick="myFunction('69')">&nbsp&nbsp<label id="L69" for="c1"></label><br>
+			<input type="checkbox" id="c70" onclick="myFunction('70')">&nbsp&nbsp<label id="L70" for="c1"></label><br>
 
 
 
@@ -172,12 +214,65 @@ function addonclick() {
 
 			<label>}, </label>
 			
-			</div>	
-			<br><br><br><br><br>
-			<label>Edit resolutions here</label> <br><br>
-			<textarea id="textarea1" style="width: 296px;height: 220px;"></textarea>
+			</div>
+			<br><br><br><br>
+			<label>Replacement Script:</label>
+			<br>
+			<div id="diva">
 			
+			<!--Paragraphs-->
+			<label id="s1" style="display:none"></label>
+			<label id="s2" style="display:none"></label>
+			<label id="s3" style="display:none"></label>
+			<label id="s4" style="display:none"></label>
+			<label id="s5" style="display:none"></label>
+			<label id="s6" style="display:none"></label>
+			<label id="s7" style="display:none"></label>
+			<label id="s8" style="display:none"></label>
+			<label id="s9" style="display:none"></label>
+			<label id="s10" style="display:none"></label>
+			<label id="s11" style="display:none"></label>
+			<label id="s12" style="display:none"></label>
+			<label id="s13" style="display:none"></label>
+			<label id="s14" style="display:none"></label>
+			<label id="s15" style="display:none"></label>
+			<label id="s16" style="display:none"></label>
+			<label id="s17" style="display:none"></label>
+			<label id="s18" style="display:none"></label>
+			<label id="s19" style="display:none"></label>
+			<label id="s20" style="display:none"></label>
+			<label id="s21" style="display:none"></label>
+			<label id="s22" style="display:none"></label>
+			<label id="s23" style="display:none"></label>
+			<label id="s24" style="display:none"></label>
+			<label id="s25" style="display:none"></label>
+			<label id="s26" style="display:none"></label>
+			<label id="s27" style="display:none"></label>
+			<label id="s28" style="display:none"></label>
+			<label id="s29" style="display:none"></label>
+			<label id="s30" style="display:none"></label>
+			<label id="s31" style="display:none"></label>
+			<label id="s32" style="display:none"></label>
+			<label id="s33" style="display:none"></label>
+			<label id="s34" style="display:none"></label>
+			<label id="s35" style="display:none"></label>
+			<label id="s36" style="display:none"></label>
+			<label id="s37" style="display:none"></label>
+			<label id="s38" style="display:none"></label>
+			<label id="s39" style="display:none"></label>
+			<label id="s40" style="display:none"></label>
+			<label id="s41" style="display:none"></label>
+			<label id="s42" style="display:none"></label>
+			<label id="s43" style="display:none"></label>
+			<label id="s44" style="display:none"></label>
+			<label id="s45" style="display:none"></label>
+			<label id="s46" style="display:none"></label>
+			<label id="s47" style="display:none"></label>
+			<label id="s48" style="display:none"></label>
+			<label id="s49" style="display:none"></label>
+			<label id="s50" style="display:none"></label>
 			
+			</div>
 
 
             
